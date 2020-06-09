@@ -11,7 +11,8 @@ import java.io.IOException;
  */
 public class JmsComsumer
 {
-    public static final String ACTIVEMQ_URL = "tcp://120.77.244.17:61616";
+//    public static final String ACTIVEMQ_URL = "tcp://120.77.244.17:61616";
+    public static final String ACTIVEMQ_URL = "tcp://127.0.0.1:61616";
     public static final String QUEUE_NAME = "peifeng_queue01";
     public static void main( String[] args ) throws JMSException, IOException {
         System.out.println("*****消费者1号");
@@ -56,7 +57,7 @@ public class JmsComsumer
                 if(null != message && message instanceof TextMessage){
                     TextMessage textMessage = (TextMessage) message;
                     try {
-                        System.out.println("*********消费者接收到消息："+textMessage.getText());
+                        System.out.println("*********消费者broker接收到消息："+textMessage.getText());
                     } catch (JMSException e) {
                         e.printStackTrace();
                     }

@@ -10,7 +10,8 @@ import javax.jms.*;
  */
 public class JmsProducer
 {
-    public static final String ACTIVEMQ_URL = "tcp://120.77.244.17:61616";
+//    public static final String ACTIVEMQ_URL = "tcp://120.77.244.17:61616";
+    public static final String ACTIVEMQ_URL = "tcp://127.0.0.1:61616";
     public static final String QUEUE_NAME = "peifeng_queue01";
     public static void main( String[] args ) throws JMSException {
         // 1、创建连接工厂，按照给定的 url 地址，采用默认用户名和密码
