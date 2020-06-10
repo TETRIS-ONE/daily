@@ -1,6 +1,7 @@
 ### Maven
 target/
 logs/
+activemq-data/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### Gradle
