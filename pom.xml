@@ -10,10 +10,10 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>activemq</module>
+    <module>algorithm</module>
   </modules>
 
   <name>daily</name>
-  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
@@ -23,6 +23,7 @@
   </properties>
 
   <dependencies>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
