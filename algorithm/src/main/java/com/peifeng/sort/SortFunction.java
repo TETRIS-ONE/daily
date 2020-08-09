@@ -62,19 +62,23 @@ public class SortFunction {
      */
     public static void selectionSort(int[] nums, int n){
         if(n <= 0) return;
-        for (int i = 0; i < n; i++) {
-            for (int j = i; j < n-1; j++) {
-                if(nums[i] > nums[j+1]){
-                    int temp = nums[i];
-                    nums[i] = nums[j+1];
-                    nums[j+1] = temp;
+        for (int i = 0; i < n - 1; i++) {
+            // 查找最小值
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if(nums[minIndex] > nums[j]){
+                    minIndex = j;
                 }
             }
+            // 交换
+            int temp = nums[i];
+            nums[i] = nums[minIndex];
+            nums[minIndex] = temp;
         }
     }
 
     public static void main(String[] args) {
-        int[] nums = {4,5,6,3,2,1};
+        int[] nums = {4,5,6,1,2,1};
         selectionSort(nums, 6);
         for (int i = 0; i < 6; i++) {
             System.out.print(nums[i] + ",");
