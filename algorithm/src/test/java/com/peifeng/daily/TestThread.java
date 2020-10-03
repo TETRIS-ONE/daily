@@ -2,6 +2,8 @@ package com.peifeng.daily;
 
 import org.junit.Test;
 
+import java.util.Collections;
+
 public class TestThread {
 
     @Test
@@ -58,7 +60,6 @@ public class TestThread {
                 }
             }
         });
-
         Thread threadB = new Thread(() -> {
             while(signal < 101){
                 if(signal % 2 == 1){

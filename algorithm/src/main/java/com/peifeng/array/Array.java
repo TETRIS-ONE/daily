@@ -1,5 +1,7 @@
 package com.peifeng.array;
 
+import java.util.HashMap;
+
 /**
  * 1）数组的插入、删除、按照下标随机访问操作
  * 2）数组中的数据是 int 类型的
