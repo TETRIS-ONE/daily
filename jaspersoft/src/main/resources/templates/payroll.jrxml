@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="payroll" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf051bb8-65b2-4c4e-8491-9ad8e82c2769">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="fdAdditions" whenResourceMissingType="Empty" uuid="591ac4af-f742-460a-90eb-b46452250b47">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="fdAddName" class="java.lang.String"/>
+		<field name="fdAddDays" class="java.math.BigDecimal"/>
+		<field name="fdAddAmount" class="java.math.BigDecimal"/>
+	</subDataset>
+	<subDataset name="fdDeductions" whenResourceMissingType="Empty" uuid="82c58c74-9de7-4e40-abd1-4dc72b260693">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="fdSubName" class="java.lang.String"/>
+		<field name="fdSubDays" class="java.math.BigDecimal"/>
+		<field name="fdSubAmount" class="java.math.BigDecimal"/>
+	</subDataset>
+	<parameter name="fdDepartment" class="java.lang.String"/>
+	<parameter name="fdPayPeriod" class="java.lang.String"/>
+	<parameter name="fdEmployee" class="java.lang.String"/>
+	<parameter name="fdPrintDate" class="java.lang.String"/>
+	<parameter name="fdSubGroup" class="java.lang.String"/>
+	<parameter name="fdDateJoin" class="java.lang.String"/>
+	<parameter name="fdUseDaysInMonth" class="java.lang.String">
+		<parameterDescription><![CDATA[本月使用的年假天数]]></parameterDescription>
+	</parameter>
+	<parameter name="fdAnnualDays" class="java.lang.String"/>
+	<parameter name="fdStaffNo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="fdAdditions" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<field name="fdDeductions" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="232" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" uuid="5130e6d0-c69d-4ad9-978b-c6c9619d2e36"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[BRIGHT FUTURE PHARMACEUTICAL LABORATORIES LIMITED
+PAYSLIP 薪金證明]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="80" height="20" uuid="4fa87dc7-3a11-400c-bc4a-146054a4f5cb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Staff No. :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="80" height="20" uuid="dc06a01e-a035-4b50-ab48-7601e4ee8cd6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Employee :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="30" width="200" height="20" uuid="2ed6b0df-0347-457a-a88c-e9ef0de41ecc"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdStaffNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="50" width="200" height="20" uuid="439d4665-2b2f-44b7-b271-a5876e6aedaa"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdEmployee}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="30" width="100" height="21" uuid="284f9c50-cc3b-4371-8650-a4d06ae1b1fe"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Department :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="51" width="100" height="19" uuid="bb081d5e-56b0-44b3-8f13-36a91206797e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Pay Period :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="30" width="175" height="20" uuid="c6996326-057b-496e-9570-770ecd339ee1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdDepartment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="50" width="175" height="20" uuid="03631225-66e0-4014-9861-471dabfcd8f1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdPayPeriod}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="70" width="175" height="40" uuid="c58675a8-e5cc-47ff-bcc5-693cfca88331"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Private & Confidential
+私人信件  請勿拆閱]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="110" width="555" height="20" uuid="4ded5b85-efc5-4fc7-9df2-294be0c2d237">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[PAY ADVICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="130" width="280" height="20" uuid="ff5ae86a-0441-4498-9fa9-6a163e995200">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Bright Future Pharm Lab Hong Kong Office]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="130" width="275" height="20" uuid="3c95b6fd-91b8-4f37-a226-f7ea1215d6d7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdDepartment}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="150" width="80" height="20" uuid="ff22794e-2a4b-494f-b461-975959f617e9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[For the period of]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="150" width="200" height="20" uuid="00071af8-9971-4b92-b957-068ed02fc29f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdPayPeriod}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="150" width="50" height="20" uuid="a3fee984-a382-4ae2-b480-a314aa73d8cc"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Print Date :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="150" width="164" height="20" uuid="5c52aaac-f2ab-4939-a14f-9e29b61db49a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdPrintDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="494" y="150" width="26" height="20" uuid="36b7a969-73da-4423-ba18-57e8ff38c740">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Page]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="520" y="150" width="34" height="20" uuid="27361b3c-b94c-4140-b049-4baebb79b474"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-1" y="171" width="555" height="1" uuid="8f9dfa61-32f8-446d-8be5-47407b211b16">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="170" width="70" height="20" uuid="44b14a54-ad62-4888-a79e-697f3d038d56"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Staff No. :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="170" width="70" height="20" uuid="abd68f06-64c1-4e8b-8c87-e088afba404a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdStaffNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="170" width="70" height="20" uuid="b3ebe5b8-6fe4-4945-8656-d34540e92fb5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Name :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="170" width="344" height="20" uuid="8c8c4ef1-b0eb-43a5-bd26-20640ea6eddf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdEmployee}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="190" width="70" height="20" uuid="7bbcb58b-c3e1-47f5-9a59-3ce98e385dd1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[EE Subgroup :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="190" width="70" height="20" uuid="6a6df44e-1482-456e-a671-bd188aaeeb44"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdSubGroup}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="190" width="70" height="20" uuid="4d7fc880-b205-440a-be23-f20674fa4aab">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Date Join :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="190" width="70" height="20" uuid="75cf4917-e7a5-49d1-b39a-f59667d5189b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdDateJoin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="190" width="100" height="20" uuid="dfa68c2b-49fa-45c4-b9b8-1175863f6218">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Annual LV Bal(P/C) :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="190" width="100" height="20" uuid="120dea14-4526-411e-9be8-5bc6b124313b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdUseDaysInMonth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="190" width="74" height="20" uuid="447b8647-84ad-4e29-9ccc-9de01c55d27b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fdAnnualDays}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="231" width="555" height="1" uuid="bd4e5c8c-cd58-4769-912d-fb1cfd5c8e2a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="140" height="20" uuid="b7f3ed22-304d-45d0-aa7d-a7c4dd7ac0a0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Additions(+)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="0" width="70" height="20" uuid="e13aa76c-8a6e-44e1-84d5-5acdcecc1cb7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Dy/Hrs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="0" width="70" height="20" uuid="ee0f1b91-b253-4ee8-93d2-f3a1191443f4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[$ Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="134" height="20" uuid="035df90b-fcab-4969-98fb-dd8e5a836879"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Deductions(-)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="70" height="20" uuid="99e46020-842a-4f03-980d-c18baed43e6d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[Dy/Hrs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="0" width="70" height="20" uuid="fb48a74b-aee5-44ae-9c9b-1b9cb35f5730"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[$ Amount]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="ce607ec3-c16d-4c29-abac-383d8aa3ce5b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="76" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="76" uuid="90838823-ca33-46a5-bee1-ebd3f3298ab6"/>
+				<componentElement>
+					<reportElement mode="Transparent" x="0" y="0" width="280" height="76" uuid="b1da7f3e-1baa-4b43-ba99-abb68be5acd5">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+						<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+						<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+						<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					</reportElement>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="fdAdditions" uuid="698839e5-94a1-4605-819f-8fe35ad8ba3c">
+							<dataSourceExpression><![CDATA[$F{fdAdditions}]]></dataSourceExpression>
+						</datasetRun>
+						<jr:column width="140" uuid="bae11c29-ba88-406d-b855-4a97627ad4e9">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+							<jr:detailCell style="Table_TD" height="30">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<textField>
+									<reportElement x="0" y="0" width="140" height="30" uuid="0132728f-5600-40aa-8c03-bfd8079d62d4"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="华文宋体"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{fdAddName}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="70" uuid="04c6735d-31fc-4f3a-aec7-c46baa84ce09">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+							<jr:detailCell style="Table_TD" height="30">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<textField>
+									<reportElement x="0" y="0" width="70" height="30" uuid="a574663a-1f64-4c44-840d-1ed4e1d29d12"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="华文宋体"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{fdAddDays}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="70" uuid="34fce779-7c98-4eb7-9ba0-3f5b779f4b74">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+							<jr:detailCell style="Table_TD" height="30">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<textField>
+									<reportElement x="0" y="0" width="70" height="30" uuid="54002bd6-4edb-44c8-a7a1-0f9017cdcff8"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="华文宋体"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{fdAddAmount}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+				<componentElement>
+					<reportElement x="280" y="0" width="274" height="76" uuid="2fbe274e-c52d-44a9-9c12-fbfd01b5fc21">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+						<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+						<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+					</reportElement>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="fdDeductions" uuid="7c0893a1-39ae-43e4-97df-58a9d18ea9ea">
+							<dataSourceExpression><![CDATA[$F{fdDeductions}]]></dataSourceExpression>
+						</datasetRun>
+						<jr:column width="134" uuid="e627c363-42c9-4a00-8104-55412f40fb25">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+							<jr:detailCell style="Table 1_TD" height="30">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField>
+									<reportElement x="0" y="0" width="134" height="30" uuid="d94ded6c-7455-4d9c-9d47-63d29a96d035"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="华文宋体"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{fdSubName}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="70" uuid="9d4e4751-f3b7-43e6-b49f-cf3396f6b518">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+							<jr:detailCell style="Table 1_TD" height="30">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField>
+									<reportElement x="0" y="0" width="70" height="30" uuid="d57becdd-b1ad-4453-811e-7c1c07c4e19e"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="华文宋体"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{fdSubDays}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="70" uuid="17d6cf16-e876-49bf-b163-5e7d3a1e5590">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+							<jr:detailCell style="Table 1_TD" height="30">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField>
+									<reportElement x="0" y="0" width="70" height="30" uuid="50d64601-1855-4a81-9612-a9476b4c82c4"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="华文宋体"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{fdSubAmount}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
